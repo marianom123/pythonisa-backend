@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pythonisa CRUD</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Edit Modal HTML -->
+    <div id="editEmployeeModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          {% for producto in productos %}
+
+          <form action="/update" method="post" enctype="multipart/form-data">
+            <div class="modal-header">
+              <h4 class="modal-title">Editar Producto</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Id</label>
+                <input
+                  type="text"
+                  value="{{ producto['id'] }}"
+                  class="form-control"
+                  name="id"
+                  readonly
+                />
+              </div>
+              <div class="form-group">
+                <label>Título</label>
+                <input
+                  type="text"
+                  value="{{ producto['titulo'] }}"
+                  class="form-control"
+                  name="titulo"
+                />
+              </div>
+              <div class="form-group">
+                <label>Descripción</label>
+                <textarea
+                  placeholder="{{ producto['descripcion'] }}"
+                  class="form-control"
+                  name="descripcion"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label>Precio</label>
+                <input
+                  type="number"
+                  min="0"
+                  max="10000000"
+                  step="any"
+                  class="form-control"
+                  name="precio"
+                  value="{{ producto['precio'] }}"
+                />
+              </div>
+              <div class="form-group">
+                <label>foto: {{ producto['foto'] }} </label>
+                <input type="file" class="form-control" name="foto" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="/admin"
+                ><input
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                  value="Cancelar"
+              /></a>
+              <input type="submit" class="btn btn-info" value="Guardar" />
+            </div>
+          </form>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
