@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_from_directory
 from flask_mysqldb import MySQL
 from datetime import datetime
 import os
@@ -27,6 +27,10 @@ mysql.init_app(app)
 
 UPLOADS = os.path.join('uploads')
 app.config['UPLOADS'] = UPLOADS
+
+@app.route('/uploads/<imagen_producto>')
+def uploads(imagen_producto):
+  return send_from_directory(app.config['UPLOADS'], imagen_producto)
 
 @app.route('/')
 def index():
@@ -101,37 +105,38 @@ def update():
   _precio = request.form['precio']
   _foto = request.files['foto']
   
-  sql = "UPDATE productos SET titulo=%s, descripcion=%s, precio=%s WHERE id=%s;"
-  datos = (_titulo, _descripcion, _precio, _id)
-  
   conn = mysql.connection
   cursor = conn.cursor()
-  cursor.execute(sql, datos)
-  productos = cursor.fetchall()
-  conn.commit()
   
-  now = datetime.now()
-  time = now.strftime("%Y%m%d_%H%M%S")
+  # Guardar la descripción actual en una variable para no perderla.
+  cursor.execute("SELECT descripcion FROM productos WHERE id=%s", (_id,))
+  row = cursor.fetchone()
+  if _descripcion == '':
+    _descripcion = row['descripcion']
+  # Ahora sí podemos actualizar la db.  
+  sql = "UPDATE productos SET titulo=%s, descripcion=%s, precio=%s WHERE id=%s;"
+  datos = (_titulo, _descripcion, _precio, _id)
+  cursor.execute(sql, datos)
+  conn.commit()
+  #------------
   
   if _foto.filename != '':
+    now = datetime.now()
+    time = now.strftime("%Y%m%d_%H%M%S")
     fotoname = time + '_' + _foto.filename
-    _foto.save("uploads/"+fotoname)
+    _foto.save("uploads/" + fotoname)
     cursor.execute("SELECT foto FROM productos WHERE id=%s", (_id,))
     fila = cursor.fetchone()
-    if fila and fila[0] is not None:
-      nombreAnterior = fila[0]
+    if fila and fila['foto'] is not None:
+      nombreAnterior = fila['foto']
       rutaAnterior = os.path.join(app.config['UPLOADS'], nombreAnterior)
       if os.path.exists(rutaAnterior):
         os.remove(rutaAnterior)
     cursor.execute("UPDATE productos SET foto=%s WHERE id=%s;", (fotoname, _id,))
     conn.commit()
     cursor.close()
-
-  
+  #--> End if
   return redirect('admin')
 
 if __name__ == '__main__':
   app.run(debug = True)
-
-
-
