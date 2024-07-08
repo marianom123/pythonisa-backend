@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, json
 from flask_mysqldb import MySQL
 from datetime import datetime
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='static')
 
 # Conexión a la DB:
 #------------------------------------------------
@@ -16,21 +16,42 @@ app = Flask(__name__)
 #------------------------------------------------
 mysql = MySQL()
 
-app.config['MYSQL_HOST'] = 'sql10.freemysqlhosting.net'
+app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_PORT'] = 3306
-app.config['MYSQL_USER'] = 'sql10717628'
-app.config['MYSQL_PASSWORD'] = '6rqZbmvWgl'
-app.config['MYSQL_DB'] = 'sql10717628'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'pythonclass'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql.init_app(app)
 
-UPLOADS = os.path.join('uploads')
+UPLOADS = os.path.join('static','assets','productos')
 app.config['UPLOADS'] = UPLOADS
 
+@app.route('/index')
 @app.route('/')
 def index():
-  return render_template('productos/index_test.html')
+  return render_template('/index.html')
+
+@app.route('/nosotros')
+def nosotros():
+  return render_template('nosotros.html')
+
+@app.route('/productos')
+def productos():
+  return render_template('productos.html')
+
+@app.route('/contactanos')
+def contactanos():
+  return render_template('contactanos.html')
+
+@app.route('/login')
+def login():
+  return render_template('login.html')
+
+@app.route('/login', methods=['POST'])
+def login_post():
+  return redirect('admin')
 
 # Vista de administración de produtcos. 
 @app.route('/admin')
@@ -42,7 +63,18 @@ def admin():
   productos = cursor.fetchall()
   conn.commit()
   
-  return render_template('productos/admin.html', productos=productos)
+  return render_template('productos/index.html', productos=productos)
+
+@app.route('/productos_get')
+def productos_get():
+  sql = "SELECT * FROM productos ORDER BY id DESC"
+  conn = mysql.connection
+  cursor = conn.cursor()
+  cursor.execute(sql)
+  productos = cursor.fetchall()
+  conn.commit()
+  
+  return json.dumps(productos)
 
 # Vista de Agregar Nuevo prodcuto.
 @app.route('/store', methods=['POST'])
@@ -57,7 +89,7 @@ def create():
   
   if _foto.filename != '':
     fotoname = time + '_' + _foto.filename
-    _foto.save("uploads/"+fotoname)
+    _foto.save("static/assets/productos/"+fotoname)
     
   sql = "INSERT INTO `productos` \
                 (`titulo`, `descripcion`, `precio`, `foto`) \
@@ -115,11 +147,11 @@ def update():
   
   if _foto.filename != '':
     fotoname = time + '_' + _foto.filename
-    _foto.save("uploads/"+fotoname)
+    _foto.save("static/assets/productos/"+fotoname)
     cursor.execute("SELECT foto FROM productos WHERE id=%s", (_id,))
     fila = cursor.fetchone()
-    if fila and fila[0] is not None:
-      nombreAnterior = fila[0]
+    if fila is not None:
+      nombreAnterior = fila.get('foto')
       rutaAnterior = os.path.join(app.config['UPLOADS'], nombreAnterior)
       if os.path.exists(rutaAnterior):
         os.remove(rutaAnterior)
@@ -131,7 +163,4 @@ def update():
   return redirect('admin')
 
 if __name__ == '__main__':
-  app.run(debug = True)
-
-
-
+  app.run(debug = True, host='0.0.0.0')

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pythonisa Store</title>
+    <link rel="shortcut icon" href="favicon.ico" type="Image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    {% include 'layout/header.html' %}
+
+    <div>
+
+      <main class="contact-container">
+
+        <h1>Formulario de Contacto</h1>
+
+        <form id="contactForm" class="contact-form">
+
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" >
+
+          <label for="last_name">Apellido:</label>
+          <input type="text" id="last_name" name="last_name" >
+
+          <label for="phone">Teléfono:</label>
+          <input type="text" id="phone" name="phone" >	
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" >
+
+          <label for="subject">Asunto:</label>
+          <select id="subject" name="subject" >
+            <option value="" disabled selected>Selecciona un asunto</option>
+            <option value="general">Consulta general</option>
+            <option value="soporte">Soporte técnico</option>
+            <option value="otro">Otro</option>
+          </select>
+
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" ></textarea>
+
+          <label>¿Cómo nos conociste?</label>
+          <label><input type="radio" name="source" value="web" > Sitio web</label>
+          <label><input type="radio" name="source" value="social"> Redes sociales</label>
+          <label><input type="radio" name="source" value="other"> Otro</label>
+
+          <img src="./assets/formulario/gracias.jpg" style="width: 200px; margin: 0 auto; display: block; border-radius: 100%;">
+
+          <label><input type="checkbox" id="newsletter" name="newsletter"> Suscribirme al boletín</label>
+
+          <input type="submit" value="Enviar">
+
+        </form>
+
+      </main>
+
+    </div>
+
+    <!--Pie de la Pagina-->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_link">
+          <h3>Siguenos:</h3>
+            <div class="redes">
+              
+              <script
+                defer
+                src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+                integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+                crossorigin="anonymous"
+              ></script>
+              <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://maps.google.com/" target="_blank"><i class="fa-brands fab fa-google-plus-g"></i></a>
+              <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+          <form>
+            <h3>Suscríbete:</h3><br>
+            <input type="email" placeholder="Correo" />
+            <input class="btn" type="submit" value="Enviar" />
+          </form>
+        </div>
+        <hr />
+        <div class="footer_text">
+          <p>Politica de Privacidad</p>
+          <p>Todos los Derechos Reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/contactanos.js"></script>
+
+  </body>
+
+</html>
