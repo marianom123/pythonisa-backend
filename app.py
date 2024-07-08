@@ -24,7 +24,7 @@ mysql = MySQL()
 # app.config['MYSQL_DB'] = 'sql10717628'
 # app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = 'marianom123.mysql.pythonanywhere-services.com'
 app.config['MYSQL_USER'] = 'marianom123'
 app.config['MYSQL_PASSWORD'] = 'pystore.cac'
 app.config['MYSQL_DB'] = 'marianom123$default'
