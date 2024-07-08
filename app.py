@@ -16,11 +16,17 @@ app = Flask(__name__, static_url_path='', static_folder='static')
 #------------------------------------------------
 mysql = MySQL()
 
-app.config['MYSQL_HOST'] = 'sql10.freemysqlhosting.net'
-app.config['MYSQL_PORT'] = 3306
-app.config['MYSQL_USER'] = 'sql10717628'
-app.config['MYSQL_PASSWORD'] = '6rqZbmvWgl'
-app.config['MYSQL_DB'] = 'sql10717628'
+# app.config['MYSQL_HOST'] = 'sql10.freemysqlhosting.net'
+# app.config['MYSQL_PORT'] = 3306
+# app.config['MYSQL_USER'] = 'sql10717628'
+# app.config['MYSQL_PASSWORD'] = '6rqZbmvWgl'
+# app.config['MYSQL_DB'] = 'sql10717628'
+# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'marianom123'
+app.config['MYSQL_PASSWORD'] = 'pystore.cac'
+app.config['MYSQL_DB'] = 'marianom123$default'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql.init_app(app)
