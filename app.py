@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, redirect, send_from_directory
+from flask import Flask, render_template, request, redirect, json
 from flask_mysqldb import MySQL
 from datetime import datetime
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='static')
 
 # Conexión a la DB:
 #------------------------------------------------
@@ -25,16 +25,33 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql.init_app(app)
 
-UPLOADS = os.path.join('uploads')
+UPLOADS = os.path.join('static','assets','productos')
 app.config['UPLOADS'] = UPLOADS
 
-@app.route('/uploads/<imagen_producto>')
-def uploads(imagen_producto):
-  return send_from_directory(app.config['UPLOADS'], imagen_producto)
-
+@app.route('/index')
 @app.route('/')
 def index():
-  return render_template('productos/index_test.html')
+  return render_template('/index.html')
+
+@app.route('/nosotros')
+def nosotros():
+  return render_template('nosotros.html')
+
+@app.route('/productos')
+def productos():
+  return render_template('productos.html')
+
+@app.route('/contactanos')
+def contactanos():
+  return render_template('contactanos.html')
+
+@app.route('/login')
+def login():
+  return render_template('login.html')
+
+@app.route('/login', methods=['POST'])
+def login_post():
+  return redirect('admin')
 
 # Vista de administración de produtcos. 
 @app.route('/admin')
@@ -46,7 +63,18 @@ def admin():
   productos = cursor.fetchall()
   conn.commit()
   
-  return render_template('productos/admin.html', productos=productos)
+  return render_template('productos/index.html', productos=productos)
+
+@app.route('/productos_get')
+def productos_get():
+  sql = "SELECT * FROM productos ORDER BY id DESC"
+  conn = mysql.connection
+  cursor = conn.cursor()
+  cursor.execute(sql)
+  productos = cursor.fetchall()
+  conn.commit()
+  
+  return json.dumps(productos)
 
 # Vista de Agregar Nuevo prodcuto.
 @app.route('/store', methods=['POST'])
@@ -61,7 +89,7 @@ def create():
   
   if _foto.filename != '':
     fotoname = time + '_' + _foto.filename
-    _foto.save("uploads/"+fotoname)
+    _foto.save("static/assets/productos/"+fotoname)
     
   sql = "INSERT INTO `productos` \
                 (`titulo`, `descripcion`, `precio`, `foto`) \
@@ -124,11 +152,11 @@ def update():
     now = datetime.now()
     time = now.strftime("%Y%m%d_%H%M%S")
     fotoname = time + '_' + _foto.filename
-    _foto.save("uploads/" + fotoname)
+    _foto.save("static/assets/productos/"+fotoname)
     cursor.execute("SELECT foto FROM productos WHERE id=%s", (_id,))
     fila = cursor.fetchone()
-    if fila and fila['foto'] is not None:
-      nombreAnterior = fila['foto']
+    if fila is not None:
+      nombreAnterior = fila.get('foto')
       rutaAnterior = os.path.join(app.config['UPLOADS'], nombreAnterior)
       if os.path.exists(rutaAnterior):
         os.remove(rutaAnterior)
@@ -139,4 +167,4 @@ def update():
   return redirect('admin')
 
 if __name__ == '__main__':
-  app.run(debug = True)
+  app.run(debug = True, host='0.0.0.0')

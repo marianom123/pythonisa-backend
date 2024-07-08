@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pythonisa Store: Nosotros</title>
+    <link rel="shortcut icon" href="favicon.png" type="Image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Fontawesome.com: -->
+    <script src="https://kit.fontawesome.com/c59ca1f4c8.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    {% include 'layout/header.html' %}
+    <main class="nos-container">
+      <section class="nos-location">
+        <h1>Nuestra ubicación</h1>
+        <!-- Google Map -->
+        <section>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1927384758314!2d-58.37768602328926!3d-34.599287457265994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacb0b1afcaf%3A0x8d53a5cf4f399e9c!2zR2FsZXLDrWFzIFBhY8OtZmljbw!5e0!3m2!1ses-419!2sar!4v1716780464197!5m2!1ses-419!2sar"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            >
+          </iframe>
+        </section>
+        <!-- Datos de contacto --> 
+        <h1>Datos de contacto</h1>  
+        <section>
+          <ul>
+            <li>
+              <i class="fa-regular fa-compass"></i>
+              <span>Dirección: Av. Córdoba 550, C1054 Cdad. Autónoma de Buenos Aires</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone-volume"></i>
+              <span>Teléfono: +54-11-554433-2211</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-earth-americas"></i>
+              <span id="nos-web-link">Web: <a href="http://pythonisia.com.ar">http://pythonisia.com.ar</a></span>
+            </li>
+            <li>
+              <i class="fa-regular fa-calendar"></i>
+              <span>Días y horarios: Lunes a viernes de 10 a 20hs</span>
+            </li>
+          </ul>
+        </section>
+      </section>
+      <!-- Nuestro equipo: Cards con los integrantes -->
+      <h1 class="nos-nuestro-equipo">Nuestro Equipo</h1>
+      <div class="container-productos">
+        <!-- Primera tarjeta Daribeth -->
+        <div class="productos">          
+          <img
+            src="./assets/about-us/daribeth.jpg"
+            alt="Daribeth"
+          />
+          <div class="nos-card-description">
+            <h3>Daribeth Leal</h3>
+            <p class="nos-title">CEO & Founder</p>
+            <p>Visionaria prodigio que redefine el estilo urbano en la moda.</p>
+            <p>daribeth.leal@pythonisa.com</p>
+            <p><button type="button">Contactame</button></p>
+          </div>
+        </div>
+        <!-- Segunda tarjeta: Rocío -->
+        <div class="productos">
+          <img src="./assets/about-us/rocio.jpg" alt="Rocío" />
+          <div class="nos-card-description">
+            <h3>Rocío Sánchez</h3>
+            <p class="nos-title">CEO & Founder</p>
+            <p>Líder creativa que marca tendencias en el mundo de la moda.</p>
+            <p>rocio.sanchez@pythonisa.com</p>
+            <p><button type="button">Contactame</button></p>
+          </div>
+        </div>
+        <!-- Tercera tarjeta: Mariano -->
+        <div class="productos">
+          <img src="./assets/about-us/mariano.jpg" alt="Mariano" />
+          <div class="nos-card-description">
+            <h3>Mariano Martino</h3>
+            <p class="nos-title">CEO & Founder</p>
+            <p>Emprendedor que fusiona elegancia y modernidad en la ropa.</p>
+            <p>Mariano.Martino@pythonisa.com</p>
+            <p><button type="button">Contactame</button></p>
+          </div>
+        </div>
+      </div>
+      <!-- Descripción de nuestra tienda -->
+      <h1>Acerca de nosotros</h1>
+      <section class="nos-container">
+        <div class="nos-foto-tienda">
+          <img class="nos-img" src="./assets/about-us/nostros-store.png" alt="Nuestro Store"/>
+        </div>
+        <p>
+          Bienvenidos a <b>Pythonisa Store</b>, tu destino favorito para
+          encontrar las últimas tendencias en moda y estilo. Desde nuestro
+          inicio, nos hemos dedicado a proporcionar a nuestros clientes una
+          experiencia de compra excepcional, combinando la pasión por la moda
+          con un servicio personalizado.
+        </p>
+        <br />
+        <p>
+          En <b>Pythonisa</b>, creemos que la moda es más que simplemente
+          vestirse bien, es una forma de expresión personal, un reflejo de tu
+          individualidad y estilo único. Por eso, nos esforzamos por ofrecer una
+          amplia gama de prendas cuidadosamente seleccionadas, desde lo último
+          en moda urbana hasta clásicos atemporales, para satisfacer todos los
+          gustos y ocasiones.
+        </p>
+        <br />
+        <p>
+          Nuestro equipo está compuesto por apasionados de la moda que están
+          siempre al tanto de las últimas tendencias y están dispuestos a
+          ayudarte a encontrar el look perfecto que te haga sentir seguro y
+          radiante. Nos enorgullece brindar un servicio al cliente excepcional,
+          con atención personalizada y asesoramiento experto, para que tu
+          experiencia de compra sea placentera y satisfactoria en todo momento.
+        </p>
+        <p>
+          Además de ofrecer productos de alta calidad, en
+          <b>Pythonisa</b> también nos comprometemos con la sostenibilidad y la
+          responsabilidad social. Nos esforzamos por trabajar con marcas que
+          comparten nuestros valores éticos y ambientales, para contribuir
+          positivamente al mundo que nos rodea.
+        </p>
+        <p>
+          Gracias por elegir <b>Pythonisa</b> como tu destino de moda preferido.
+          Esperamos inspirarte a explorar nuevas tendencias, experimentar con tu
+          estilo y sentirte seguro en cada paso que des.
+        </p>
+        <br />
+        <p>
+          <b>¡Bienvenido a nuestra comunidad de amantes de la moda!</b>
+        </p>
+        <p>¡Nos encanta tenerte aquí!</p>
+        <p>El equipo de Pythonisa</p>
+      </section>
+      <br />
+      <!-- Misión -->
+      <section class="nos-container">
+        <h2>Misión</h2>
+        <p>
+          En <b>Pythonisa</b>, nuestra misión es inspirar y empoderar a nuestros
+          clientes a través de la moda, ofreciendo una experiencia de compra
+          excepcional y una amplia selección de prendas de alta calidad. Nos
+          comprometemos a proporcionar un servicio al cliente personalizado y
+          asesoramiento experto, mientras promovemos la sostenibilidad y la
+          responsabilidad social en cada paso que damos.
+        </p>
+      </section>
+      <br />
+      <!-- Visión -->
+      <section class="nos-container">
+        <h2>Vision</h2>
+        <p>
+          Nuestra visión en <b>Pythonisa</b> es convertirnos en el destino de
+          moda preferido por nuestros clientes, reconocido por nuestra pasión
+          por la moda, nuestro compromiso con la excelencia en el servicio al
+          cliente y nuestro impacto positivo en la comunidad y el medio
+          ambiente. Nos esforzamos por ser líderes en la industria de la moda,
+          inspirando a otros a seguir nuestro ejemplo y contribuir a un mundo
+          más consciente y lleno de estilo.
+        </p>
+      </section>
+      <br />
+      <!-- Valores -->
+      <section class="nos-container">
+        <h2>Nuestros Valores</h2>
+        <ol>
+          <li>
+            <b>Pasión por la moda:</b> Nos apasiona la moda y nos esforzamos por
+            estar siempre al tanto de las últimas tendencias y estilos.
+          </li>
+          <li>
+            <b>Excelencia en el servicio al cliente:</b> Nos comprometemos a
+            proporcionar un servicio al cliente excepcional, con atención
+            personalizada y asesoramiento experto en cada interacción.
+          </li>
+          <li>
+            <b>Sostenibilidad:</b> Nos comprometemos a trabajar con marcas que
+            comparten nuestros valores éticos y ambientales, promoviendo
+            prácticas sostenibles en toda nuestra cadena de suministro.
+          </li>
+          <li>
+            <b>Responsabilidad social:</b> Nos preocupamos por nuestra comunidad
+            y nos esforzamos por contribuir positivamente a través de
+            iniciativas sociales y ambientales.
+          </li>
+          <li>
+            <b>Diversidad e inclusión:</b> Celebramos la diversidad en todas sus
+            formas y nos esforzamos por crear un ambiente inclusivo donde todos
+            se sientan bienvenidos y valorados.
+          </li>
+        </ol>
+        <br /><br />
+        <p>
+          Con estos principios como guía, nos esforzamos por cumplir nuestra
+          misión y alcanzar nuestra visión cada día en
+          <b>Pythonisa</b>.
+        </p>
+      </section>
+      <br /><br /><br />
+    </main>
+    <!--Pie de la Pagina-->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_link">
+          <h3>Siguenos:</h3>
+            <div class="redes">
+              
+              <script
+                defer
+                src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+                integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+                crossorigin="anonymous"
+              ></script>
+              <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://maps.google.com/" target="_blank"><i class="fa-brands fab fa-google-plus-g"></i></a>
+              <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+          <form>
+            <h3>Suscríbete:</h3><br>
+            <input type="email" placeholder="Correo" />
+            <input class="btn" type="submit" value="Enviar" />
+          </form>
+        </div>
+        <hr />
+        <div class="footer_text">
+          <p>Politica de Privacidad</p>
+          <p>Todos los Derechos Reservados</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

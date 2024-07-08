@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pythonisa Store</title>
+    <link rel="shortcut icon" href="favicon.png" type="Image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    {% include 'layout/header.html' %}
+    <!--Comienzo de productos-->
+    <div class="container-productos" id="listado-productos">
+      
+    </div>
+    <!--Pie de la Pagina-->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_link">
+          <h3>Siguenos:</h3>
+            <div class="redes">
+              
+              <script
+                defer
+                src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+                integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+                crossorigin="anonymous"
+              ></script>
+              <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://maps.google.com/" target="_blank"><i class="fa-brands fab fa-google-plus-g"></i></a>
+              <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+          <form>
+            <h3>Suscríbete:</h3><br>
+            <input type="email" placeholder="Correo" />
+            <input class="btn" type="submit" value="Enviar" />
+          </form>
+        </div>
+        <hr />
+        <div class="footer_text">
+          <p>Politica de Privacidad</p>
+          <p>Todos los Derechos Reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <script >
+      fetch('productos_get')
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res)
+          let html = ''
+          res.forEach((element) => {
+      //       <div class="productos">
+      //   <img src="./assets/productos/producto10.png" alt="">
+      //   <h3>Poncho de Lluvia<br>"Kite"</h3>
+      //   <p>Diseñado para acompañar cualquier exploración, el poncho de lluvia Kite, es un poncho repelente al agua y resistente al viento para una protección ligera contra los elementos.</p>
+      //   <h3>325$</h3>
+      //   <button class="carrito">Añadir al Carrito</button>
+      // </div>
+
+            html += `
+            <div class="productos">
+              <img src="./assets/productos/${element.foto}" alt="">
+              <h3>${element.titulo}</h3>
+              <p>${element.descripcion}</p>
+              <h3>${element.precio}$</h3>
+              <button class="carrito">Añadir al Carrito</button>
+            </div>
+            `
+            document.getElementById('listado-productos').innerHTML = html
+          })
+        })
+
+    </script>
+
+  </body>
+</html>
