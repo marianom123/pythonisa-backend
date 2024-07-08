@@ -1,0 +1,83 @@
+TÍTULO: Poncho de Lluvia "Kite"
+DESCRIPCIÓN: Diseñado para acompañar cualquier exploración, el poncho de lluvia Kite, es un poncho repelente al agua y resistente al viento para una protección ligera contra los elementos.
+PRECIO: 325$
+
+TÍTULO: Buzo Polar Todoterreno "Anorak"
+DESCRIPCIÓN: Confeccionado con forro polar sherpa reciclado, el Anorak Todoterreno, apto para viajes, ofrece comodidad y calidez confeccionadas de forma responsable.
+PRECIO: 345$
+
+TÍTULO: Chaleco Polar Todoterreno "Terrain"
+DESCRIPCIÓN: El chaleco Terrain Sherpa, confeccionado con forro polar sherpa reciclado de primera calidad por dentro y por fuera, es una opción ideal para aventuras urbanas.
+PRECIO: 295$
+
+TÍTULO: Chaleco azul "Phase"
+DESCRIPCIÓN: El chaleco Phase es la mejor opción para el clima frío, con resistencia a la intemperie, aislamiento liviano y versatilidad de primer nivel, brinda una calidez superior.
+PRECIO: 525$
+
+TÍTULO: Buzo Termico "Walsh"
+DESCRIPCIÓN: El Walsh de cremallera completa tiene un corte ajustado está confeccionado con tejido Polartec® Thermal Pro® 100% poliéster reciclado con certificación bluesign® y OEKO-TEX®.
+PRECIO: 425$
+
+TÍTULO: Poncho "Down"
+DESCRIPCIÓN: El Poncho Unisex Down está confeccionado con una capa exterior tejida mate y aislado con plumón de ganso con una versión técnica a la vez súper funcional y acogedora.
+PRECIO: 375$
+
+TÍTULO: Conjunto de Nieve "Boyd"
+DESCRIPCIÓN: El Conjunto de nieve Boyd brinda la máxima cobertura con facilidad: costuras completamente selladas para evitar la entrada de nieve, agua y viento con nuestra cinta de costura personalizada.
+PRECIO: 900$
+
+TÍTULO: Conjunto de Nieve "Boyd II"
+DESCRIPCIÓN: Nuestro Conjunto de nieve Boyd II brinda la máxima cobertura con facilidad: costuras completamente selladas para evitar la entrada de nieve, agua y viento con nuestra cinta de costura personalizada.
+PRECIO: 850$
+
+TÍTULO: Chaqueta Puffer "Aura"
+DESCRIPCIÓN: La Chaqueta Puffer Aura es increíblemente liviano y muy cálido, es el combo perfecto para el invierno. Está confeccionado con una capa exterior tejida mate y aislado con plumón de ganso.
+PRECIO: 590$
+
+TÍTULO: Chaqueta "Stirling"
+DESCRIPCIÓN: Aislada con plumón de ganso, es resistente al agua y al viento, la chaqueta Stirling mantiene una forma sofisticada y entallada que garantiza que luzcas genial mientras te mantienes abrigada.
+PRECIO: 695$
+
+TÍTULO: Jogger ligero "Solstice"
+DESCRIPCIÓN: Los pantalones joggers ligeros Solstice ofrecen comodidad absoluta con flexibilidad y durabilidad adicionales para ponerlos a prueba. De corte entallado y perfectos para cualquier momento.
+PRECIO: 195$
+
+TÍTULO: Pantalon de viaje "Eloise"
+DESCRIPCIÓN: El pantalón de viaje Eloise, está confeccionado con un cómodo tejido elástico reciclado, está diseñado específicamente tanto para viajes extensos como para uso por la ciudad.
+PRECIO: 295$
+
+TÍTULO: Zapatillas bajas "Dalton"
+DESCRIPCIÓN: Las zapatillas bajas Dalton de cuero para mujer cuentan con D3O®, la misma protección que usamos en nuestro equipo de motocicleta, en la plantilla para una gran comodidad cuando estás de pie.
+PRECIO: 295$
+
+TÍTULO: Bota con Piel de Oveja "Dolomite"
+DESCRIPCIÓN: Cada bota está hecha a mano con cuero italiano 100 % curtido vegetal y luego forrada con piel de oveja, lo que la convierte en una opción acogedora para los días fríos de invierno.
+PRECIO: 495$
+
+TÍTULO: Chaqueta Motociclista "Mulholland"
+DESCRIPCIÓN: La Mulholland es un regreso a nuestra filosofía central en cuanto a equipamiento para motociclistas: una chaqueta discretamente técnica, pero totalmente protectora, que no quedaría fuera de lugar en una salida nocturna.
+PRECIO: 650$
+
+TÍTULO: Chaqueta impermeable "Anders"
+DESCRIPCIÓN: Nuestra chaqueta impermeable Anders, viene con costuras selladas, impermeable y confeccionada con tejido certificado bluesign®, es una gabardina resistente pero transpirable que está lista para enfrentar los elementos.
+PRECIO: 495$
+
+TÍTULO: Buzo "Anorak Men"
+DESCRIPCIÓN: El buzo Anorak Men ha sido confeccionado con tela ripstop japonesa teñida a mano, lo que lo convierte en una prenda única. Acabado con un diseño para mejorar la ventilación y la movilidad, personifica nuestro enfoque del diseño.
+PRECIO: 375$
+
+TÍTULO: Chaqueta "Silverton"
+DESCRIPCIÓN: La chaqueta Silverton, es nuestro crossover de esquí urbano aislado y resistente a la intemperie, es un producto imprescindible para el invierno con un tecnicismo discreto pero robusto. 
+PRECIO: 625$
+
+TÍTULO: Chaqueta "Watts"
+DESCRIPCIÓN: Presentamos Watts, nuestra chaqueta suave y liviana con una transpirabilidad y calidez impresionantes. Confeccionada con un tejido polar técnico extrasuave, proporciona elasticidad y favorece el movimiento.
+PRECIO: 395$
+
+TÍTULO: Chaqueta "Eco"
+DESCRIPCIÓN: Adaptada de  la  Eco Space Hoodie, esta es una versión sustentable de la primeras prendas de Pythonisa, la chaqueta con aislamiento Eco es una pieza liviana con excelente resistencia y estilo urbano chic.
+PRECIO: 350$
+
+TÍTULO: Chaqueta "Launch"
+DESCRIPCIÓN: La chaqueta Launch resistente al agua está confeccionada con tejido antidesgarro elástico previamente probado, es una prenda liviana y está aislada con plumón de ganso gris con relleno.
+PRECIO: 425$</h3>
