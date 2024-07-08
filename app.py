@@ -133,19 +133,24 @@ def update():
   _precio = request.form['precio']
   _foto = request.files['foto']
   
-  sql = "UPDATE productos SET titulo=%s, descripcion=%s, precio=%s WHERE id=%s;"
-  datos = (_titulo, _descripcion, _precio, _id)
-  
   conn = mysql.connection
   cursor = conn.cursor()
-  cursor.execute(sql, datos)
-  productos = cursor.fetchall()
-  conn.commit()
   
-  now = datetime.now()
-  time = now.strftime("%Y%m%d_%H%M%S")
+  # Guardar la descripción actual en una variable para no perderla.
+  cursor.execute("SELECT descripcion FROM productos WHERE id=%s", (_id,))
+  row = cursor.fetchone()
+  if _descripcion == '':
+    _descripcion = row['descripcion']
+  # Ahora sí podemos actualizar la db.  
+  sql = "UPDATE productos SET titulo=%s, descripcion=%s, precio=%s WHERE id=%s;"
+  datos = (_titulo, _descripcion, _precio, _id)
+  cursor.execute(sql, datos)
+  conn.commit()
+  #------------
   
   if _foto.filename != '':
+    now = datetime.now()
+    time = now.strftime("%Y%m%d_%H%M%S")
     fotoname = time + '_' + _foto.filename
     _foto.save("static/assets/productos/"+fotoname)
     cursor.execute("SELECT foto FROM productos WHERE id=%s", (_id,))
@@ -158,8 +163,7 @@ def update():
     cursor.execute("UPDATE productos SET foto=%s WHERE id=%s;", (fotoname, _id,))
     conn.commit()
     cursor.close()
-
-  
+  #--> End if
   return redirect('admin')
 
 if __name__ == '__main__':
