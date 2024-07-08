@@ -89,7 +89,7 @@
                 <label>foto: {{ producto['foto'] }} </label>
                 <br />
                 <img
-                  src="{{ url_for('uploads', imagen_producto = producto['foto']) }}"
+                  src="{{ url_for('static', filename = 'assets/productos/' ~ producto['foto'])| }}"
                   alt="imagen_producto"
                   width="100"
                 />
