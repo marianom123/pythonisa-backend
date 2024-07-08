@@ -5,6 +5,7 @@ import os
 
 app = Flask(__name__, static_url_path='', static_folder='static')
 
+
 # Conexión a la DB:
 #------------------------------------------------
 # Link: https://www.phpmyadmin.co/
